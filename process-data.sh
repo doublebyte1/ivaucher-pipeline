@@ -6,7 +6,7 @@ data="$1"
 wget "https://static.ivaucher.pt/docs/Lista-de-Postos-de-Abastecimento-de-Combustiveis-Aderentes_$data.pdf" -O lista.pdf ;
 pdftotext -layout lista.pdf lista.txt;
 cat lista.txt |sed -E s/'  '+/'@'/g|grep -v 'Postos de abastecimento aderentes' \
- |grep -v 'Data de atualiza'|grep -v 'Distrito@Concelho@Marca@'|sed -r '/^\s*$/d'|grep -v "Nota:" \
+ |grep -v 'Data de atualiza'|grep -v 'Distrito@Concelho@Marca ou Entidade@'|sed -r '/^\s*$/d'|grep -v "Nota:" \
  |grep -v 'respetivo@ mediante contacto'|sed '/^@/d' \
  > Lista-de-Postos-de-Abastecimento-de-Combustiveis-Aderentes_$data.csv;
 
