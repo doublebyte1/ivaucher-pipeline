@@ -12,7 +12,7 @@ import sys
 name = str(sys.argv[1])
 
 df = pd.read_csv("Lista-de-Postos-de-Abastecimento-de-Combustiveis-Aderentes_" + name + ".csv", sep='@', 
-                 names=["Distrito", "Concelho", "Marca", "Designacao", "Morada", "Cod_Postal"]) 
+                 names=["Distrito", "Concelho", "Marca",  "Morada", "Cod_Postal"]) 
 
 
 
